@@ -1,20 +1,19 @@
 <template>
   <div id="app">
-    <Navbar />
-    <Homepage />
+    <DefaultLayout />
+   
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import Navbar from './components/Navbar.vue';
-import Homepage from './pages/Homepage.vue';
+import DefaultLayout from './layouts/DefaultLayout.vue';
+
 
 export default defineComponent({
   name: 'App',
   components: {
-    Navbar,
-    Homepage
+    DefaultLayout,
   }
 });
 </script>

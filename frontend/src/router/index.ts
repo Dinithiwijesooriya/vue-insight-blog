@@ -3,9 +3,11 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Homepage from '@/pages/Homepage.vue';
 import About from '@/pages/About.vue';
 import Contact from '@/pages/Contact.vue';
+import CreatePost from '@/pages/admin/CreatePost.vue';
 
 const routes = [
   { path: '/', name: 'Home', component: Homepage },
+  { path: '/admin/create', component: CreatePost },
   { path: '/about', name: 'About', component: About },
   { path: '/contact', name: 'Contact', component: Contact },
 ];

@@ -13,6 +13,9 @@
         <li>
           <router-link to="/contact" class="text-gray-700 hover:text-blue-500">Contact</router-link>
         </li>
+        <li>
+            <router-link to="/admin/create" class="text-gray-700 hover:text-blue-500">Create</router-link>
+        </li>
       </ul>
     </nav>
   </template>
