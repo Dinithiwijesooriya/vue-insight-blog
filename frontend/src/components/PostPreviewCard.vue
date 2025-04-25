@@ -1,10 +1,17 @@
 <template>
-  <div class="border border-gray-200 p-6 rounded-lg bg-white shadow-sm hover:shadow-md transition-shadow duration-200">
-    <h2 class="text-xl font-bold mb-3 text-black">{{ title }}</h2>
-    <p class="text-gray-500 mb-4">{{ description }}</p>
-    <div class="text-sm text-gray-500 flex justify-between items-center">
-      <span class="font-medium">{{ author }}</span>
-      <span>{{ formattedDate }}</span>
+  <div class="bg-gradient-to-br from-blue-50 to-white border border-blue-100 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200">
+    <!-- Title in black as requested -->
+    <h2 class="text-xl font-bold mb-3 text-black">
+      {{ title }}
+    </h2>
+    
+    <!-- Description with blue accent -->
+    <p class="text-gray-600 mb-4">{{ description }}</p>
+    
+    <!-- Footer with blue accents -->
+    <div class="text-sm text-gray-600 flex justify-between items-center">
+      <span class="font-medium text-blue-600">{{ author }}</span>
+      <span class="text-blue-500">{{ formattedDate }}</span>
     </div>
   </div>
 </template>
