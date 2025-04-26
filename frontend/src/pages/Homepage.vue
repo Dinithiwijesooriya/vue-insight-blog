@@ -1,38 +1,52 @@
 <template>
   <!-- Hero Section with Dark Blue Text -->
-  <div class="relative bg-cover bg-center h-screen" style="background-image: url('/home.jpg');">
-    <div class="absolute inset-0 bg-gradient-to-b from-blue-900/90 to-blue-800/70"></div>
-    <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-accent to-blue-600 text-transparent bg-clip-text">
+  <div class="relative bg-cover bg-center h-screen flex items-center" style="background-image: url('/home.jpg');">
+    <!-- Optimized overlay for dark blue text -->
+    <div class="absolute inset-0 bg-gradient-to-br from-gray-900/40 to-gray-900/20"></div>
+
+    <div class="relative z-10 max-w-2xl mx-auto px-6 text-center">
+      <!-- Main heading in deep blue -->
+      <h1 class="text-5xl md:text-6xl font-bold mb-6 text-blue-900 drop-shadow-md">
         Decoding Success
       </h1>
-      <p class="text-lg sm:text-xl max-w-2xl mb-8 text-black-100 font-medium">
-        Actionable case studies, tech trends, and growth frameworks for modern entrepreneurs.
+
+      <!-- Updated Subheading with improved typography -->
+      <p class="text-xl md:text-2xl text-blue-700 font-normal mb-10 leading-normal max-w-xl mx-auto tracking-wide">
+        Actionable and simple adjustments, and growth frameworks for modern entrepreneurs.
       </p>
-      <button class="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-3 rounded-lg hover:opacity-90 transition shadow-lg hover:shadow-xl transform hover:scale-105 duration-300">
-        Explore Case Studies
-      </button>
+
+      <!-- Button group with dark blue accents -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <button
+          class="bg-blue-800 text-white px-8 py-3 rounded-lg hover:bg-blue-900 transition-all duration-300 shadow-lg font-semibold">
+          Explore Case Studies
+        </button>
+        <button
+          class="bg-transparent border-2 border-blue-800 text-blue-800 px-8 py-3 rounded-lg hover:bg-blue-800/10 transition-all duration-300 font-semibold">
+          Leadership
+        </button>
+      </div>
     </div>
   </div>
 
   <!-- Featured Blog Posts Section -->
-  <div class="container mx-auto px-4 py-16 bg-blue-50">
-    <h2 class="text-3xl font-bold mb-12 text-center bg-gradient-to-r from-blue-700 to-blue-600 text-transparent bg-clip-text">
-      Featured Insights
-    </h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <PostPreviewCard
-        v-for="post in posts"
-        :key="post.id"
-        :title="post.title"
-        :description="post.description"
-        :author="post.author"
-        :date="post.date"
-      />
+  <div class="container mx-auto px-6 py-20 bg-white">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-blue-900 mb-4">Featured Insights</h2>
+      <p class="text-xl text-blue-700 max-w-2xl mx-auto font-normal tracking-wide">
+        Discover our latest research and business analysis
+      </p>
     </div>
-    <div class="text-center mt-12">
-      <button class="border-2 border-blue-600 text-blue-700 px-6 py-3 rounded-lg hover:bg-blue-600 hover:text-white transition-colors font-medium shadow-md hover:shadow-lg">
-        View All Articles
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <PostPreviewCard v-for="post in posts" :key="post.id" :title="post.title" :description="post.description"
+        :author="post.author" :date="post.date" />
+    </div>
+
+    <div class="text-center mt-16">
+      <button @click="$router.push('/articles')"
+        class="bg-blue-800 text-white px-8 py-3 rounded-lg hover:bg-blue-900 transition-all duration-300 shadow-md font-medium">
+        View All Articles →
       </button>
     </div>
   </div>
@@ -60,21 +74,21 @@ export default defineComponent({
           id: 1,
           title: 'How Company X Scaled 10x Using AI',
           description: 'Discover the AI strategies that helped Company X achieve exponential growth.',
-          author: 'Author One',
+          author: 'Sarah Johnson',
           date: '2023-10-01',
         },
         {
           id: 2,
           title: 'The Future of Remote Work in 2024',
           description: 'Analyzing emerging trends in distributed team management.',
-          author: 'Author Two',
+          author: 'Michael Chen',
           date: '2023-11-15',
         },
         {
           id: 3,
           title: 'Sustainable Business Practices That Pay Off',
           description: 'How eco-friendly operations can drive profitability.',
-          author: 'Author Three',
+          author: 'Emma Rodriguez',
           date: '2023-12-05',
         },
       ],
